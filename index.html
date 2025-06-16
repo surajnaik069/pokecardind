@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PokéCardInd - Genuine Pokemon Cards</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: white;
+    }
+    header {
+      background-color: #1f1f1f;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 1.5em;
+      margin: 0;
+      color: #00ccff;
+    }
+    .search-bar {
+      margin: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .search-bar input {
+      padding: 10px;
+      width: 90%;
+      max-width: 500px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 1.5em;
+      margin: 30px 0 10px;
+      color: #00ccff;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      padding: 0 20px 40px;
+    }
+    .product-card {
+      background-color: #1e1e1e;
+      padding: 15px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .product-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .product-card h3 {
+      font-size: 1em;
+      margin: 10px 0 5px;
+    }
+    .product-card p {
+      color: #ccc;
+      margin: 0;
+    }
+    .floating-buttons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .floating-buttons a {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #00ccff;
+      color: white;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 24px;
+    }
+  </style>
+  <script>
+    function searchProducts() {
+      const input = document.getElementById('search').value.toLowerCase();
+      const cards = document.querySelectorAll('.product-card');
+      cards.forEach(card => {
+        const name = card.querySelector('h3').textContent.toLowerCase();
+        card.style.display = name.includes(input) ? '' : 'none';
+      });
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>PokéCardInd</h1>
+    <div><span style="font-size: 14px; color: #bbb;">Genuine Collectibles</span></div>
+  </header>
+  <div class="search-bar">
+    <input type="text" id="search" placeholder="Search for Pokémon cards..." onkeyup="searchProducts()" />
+  </div>
+  <div class="section-title">Trending Products</div>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="https://via.placeholder.com/150x200" alt="Card 1" />
+      <h3>Pikachu VMAX</h3>
+      <p>₹499</p>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/150x200" alt="Card 2" />
+      <h3>Charizard GX</h3>
+      <p>₹1,299</p>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/150x200" alt="Card 3" />
+      <h3>Mewtwo Holo</h3>
+      <p>₹899</p>
+    </div>
+  </div>
+  <div class="floating-buttons">
+    <a href="https://wa.me/91XXXXXXXXXX" title="WhatsApp" target="_blank">💬</a>
+    <a href="mailto:support@pokecardind.in" title="Email">📧</a>
+    <a href="https://t.me/yourtelegram" title="Telegram" target="_blank">📨</a>
+  </div>
+</body>
+</html>
